@@ -1,0 +1,35 @@
+.fnav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 15vh;
+	background: #fafafa;
+
+	&__link {
+		margin-bottom: 1rem;
+	}
+
+	&__backToTop {
+		text-decoration: underline;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__item {
+		font-size: 1.75em;
+		margin-left: 0.5rem;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	&__cr {
+		font-size: 0.8em;
+		text-align: center;
+	}
+}

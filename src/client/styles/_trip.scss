@@ -1,0 +1,141 @@
+.trips {
+	margin: 1vh 0 10vh;
+	padding: $pad-default;
+	background: #fff;
+	display: grid;
+	grid-template-rows: 10vh minmax(80vh, auto);
+
+	@media only screen and (min-width: $bp-small) {
+		padding: $pad-small;
+	}
+
+	@media only screen and (min-width: $bp-medium) {
+		padding: $pad-medium;
+	}
+
+	&__message {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__update {
+		display: block;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	&__spinner {
+		font-size: 1.75rem;
+		margin: 5rem auto;
+		text-align: center;
+		animation: rotate 2s infinite linear;
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotate(0);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	&__added,
+	&__deleted {
+		animation: fadeIn ease 1000ms;
+		transition: opacity 0.3s ease-in-out;
+
+		&.disappear {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	&__status {
+		display: block;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-auto-rows: minmax(84vh, auto);
+		row-gap: 2vh;
+
+		@media only screen and (min-width: $bp-small) {
+			grid-template-columns: repeat(2, 1fr);
+			column-gap: 2vw;
+			justify-items: center;
+			justify-content: start;
+			align-items: stretch;
+		}
+
+		@media only screen and (min-width: $bp-medium) {
+			grid-template-columns: repeat(3, 1fr);
+			column-gap: 1rem;
+			justify-items: center;
+			justify-content: start;
+			align-items: stretch;
+		}
+
+		@media only screen and (min-width: $bp-largest) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&__card {
+		display: grid;
+		grid-template-rows: repeat(2, 1fr);
+		gap: 1rem;
+		border-radius: 5px;
+		box-shadow: $shadow 0px 2px 8px 0px;
+	}
+
+	&__image {
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 5px 5px 0 0;
+		}
+	}
+
+	&__content {
+		padding: $pad-default;
+	}
+
+	&__meta {
+		margin-bottom: 1rem;
+		color: $date-color;
+	}
+
+	&__weather {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 1rem;
+	}
+
+	&__forecast {
+		text-align: center;
+
+		&-icon {
+			max-width: 4.75rem;
+		}
+	}
+
+	&__edit {
+		text-align: center;
+	}
+
+	&__btn {
+		border-radius: 0 0 5px 5px;
+	}
+}

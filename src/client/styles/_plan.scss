@@ -1,0 +1,76 @@
+.plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+    background: top / cover no-repeat url(../media/tr.jpeg);
+    &__header {
+        padding: 5rem 1rem 0;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #fff;
+        font: $bold-font;
+    }
+    &__form {
+        padding: $pad-default;
+        @media only screen and (min-width: $bp-small) {
+            padding: $pad-small;
+        }
+        @media only screen and (min-width: $bp-medium) {
+            padding: $pad-medium;
+        }
+    }
+    &__fields {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        row-gap: 0.5rem;
+        @media only screen and (min-width: $bp-small) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-areas: 'ct ct' 'st en' 'bt bt';
+            column-gap: 0.5rem;
+        }
+        @media only screen and (min-width: $bp-medium) {
+            grid-template-columns: repeat(3, minmax(11.4875rem, 1fr)) 7.5rem;
+            grid-template-areas: none;
+            row-gap: 0;
+        }
+    }
+    &__field {
+        &-01 {
+            @media only screen and (min-width: $bp-small) {
+                grid-area: ct;
+            }
+            @media only screen and (min-width: $bp-medium) {
+                grid-area: auto;
+            }
+        }
+        &-02 {
+            @media only screen and (min-width: $bp-small) {
+                grid-area: st;
+            }
+            @media only screen and (min-width: $bp-medium) {
+                grid-area: auto;
+            }
+        }
+        &-03 {
+            @media only screen and (min-width: $bp-small) {
+                grid-area: en;
+            }
+            @media only screen and (min-width: $bp-medium) {
+                grid-area: auto;
+            }
+        }
+        &-04 {
+            @media only screen and (min-width: $bp-small) {
+                grid-area: bt;
+            }
+            @media only screen and (min-width: $bp-medium) {
+                grid-area: auto;
+            }
+        }
+    }
+    &__btn {
+        height: 2.4rem;
+        border-radius: 3px;
+    }
+}

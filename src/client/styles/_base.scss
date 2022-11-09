@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@400;800&family=Sacramento&display=swap');
+
+// FONT
+$default-font: 400 0.8rem 'Lato', sans-serif;
+$bold-font: 800 3rem 'Playfair Display', serif;
+$nav-font: 400 3rem 'Sacramento', cursive;
+
+// COLOR
+$bt-color: #20948b;
+$bt-hover-color: #07575b;
+$date-color: #de7a22;
+$heart: #ec96a4;
+$heart-hover: #fa6775;
+$shadow: rgba(99, 99, 99, 0.2);
+$placeholder-text: #aaa;
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75.0625rem; // 1201px
+$bp-large: 64.0625rem; // 1025px
+$bp-medium: 53.6875rem; // 859px
+// $bp-small: 22.5rem; // 360px
+$bp-small: 30.0625rem; // 481px
+
+// PADDING
+$pad-medium: 0 6rem;
+$pad-small: 0 3rem;
+$pad-default: 0 1rem;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font: $default-font;
+}
+
+img {
+	// Responsive
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	display: block;
+}
+
+ul {
+	list-style: none;
+}
+
+.link {
+	color: $bt-color;
+	text-decoration: none;
+	transition: 0.3s;
+
+	&:hover {
+		color: $bt-hover-color;
+	}
+
+	&:visited {
+		text-decoration: none;
+	}
+}
+
+button {
+	width: 100%;
+	overflow: hidden;
+	font: $default-font;
+	text-transform: uppercase;
+	line-height: 1.25rem;
+	color: #fff;
+	background: $bt-color;
+	border: transparent;
+	padding: 0.5rem 1rem;
+	transition: 0.3s;
+
+	&:hover {
+		cursor: pointer;
+		background: $bt-hover-color;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:active {
+		background: $bt-hover-color;
+		color: #fff;
+	}
+}
+
+input {
+	width: 100%;
+	overflow: hidden;
+	font: $default-font;
+	line-height: 1.25rem;
+	border: transparent;
+	padding: 0.5rem 1rem;
+	height: 2.4rem;
+	border-radius: 3px;
+
+	&:focus {
+		outline: none;
+		box-shadow: 0px 0px 3px $bt-color;
+	}
+
+	&:active {
+		outline: none;
+	}
+
+	&[type='date'] {
+		max-width: 100%;
+		overflow: hidden;
+
+		&:before {
+			content: attr(placeholder) !important;
+			color: $placeholder-text;
+			margin-right: 0.5em;
+		}
+		&:focus {
+			&:before {
+				content: '';
+			}
+		}
+		&:valid {
+			&:before {
+				content: '';
+			}
+		}
+	}
+}
+
+::-webkit-input-placeholder {
+	/* Edge */
+	color: $placeholder-text;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: $placeholder-text;
+}
+
+::placeholder {
+	color: $placeholder-text;
+}
